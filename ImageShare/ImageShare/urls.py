@@ -5,9 +5,8 @@ from django.contrib import admin
 admin.autodiscover()
 from django.conf.urls.static import static
 import settings
-import views
-
-from shareimg import urls as appurls
+from shareimg import views
+# from shareimg import urls as appurls
 
 
 urlpatterns = patterns('',
@@ -23,7 +22,7 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^', include(appurls)),
+    # url(r'^', include(appurls)),
 )
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
